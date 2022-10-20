@@ -1,41 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic Tac Toe</title>
-  </head>
-  <body>
+</head>
+
+<body>
+
     <div class="window">
-    <div class="grid-symbol-window">
-      <div class="choose-div">
-        <div class="chooseSymbol">
-          <div class="symbol">X</div>
+
+        <div class="grid-difficulty-window">
+
+            <div class="grid-symbol-window">
+                <div class="choose-div">
+                    <div class="chooseSymbol">
+                        <button class="player-button">Player</button>
+                    </div>
+                    <div class="chooseSymbol">
+                        <button class="ai-button">A.I.</button>
+                    </div>
+
+                </div>
+
+                <div class="gridWindow">
+                    <div class="grid"></div>
+                    <div class="grid"></div>
+                    <div class="grid"></div>
+                    <div class="grid"></div>
+                    <div class="grid"></div>
+                    <div class="grid"></div>
+                    <div class="grid"></div>
+                    <div class="grid"></div>
+                    <div class="grid"></div>
+                </div>
+
+                <div class="restart">
+                    <button class="restart-button">
+                  Restart
+                </button>
+                </div>
+            </div>
+
+            <div class="difficulty">
+                <div class="class-dif">A.I. Difficulty:</div>
+                <button class="easy-dif">Easy</button>
+                <button class="medium-dif">Medium</button>
+                <button class="hard-dif">Hard</button>
+                <button class="impossible-dif">Impossible</button>
+            </div>
+
         </div>
-        <div class="chooseSymbol">
-          <div class="symbol">O</div>
-        </div>
-
-      </div>
-
-      <div class="gridWindow">
-        <div class="grid"></div>
-        <div class="grid"></div>
-        <div class="grid"></div>
-        <div class="grid"></div>
-        <div class="grid"></div>
-        <div class="grid"></div>
-        <div class="grid"></div>
-        <div class="grid"></div>
-        <div class="grid"></div>
-      </div>
-
 
     </div>
-  </div>
 
-  </body>
+</body>
+
 </html>
