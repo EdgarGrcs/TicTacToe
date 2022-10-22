@@ -1,8 +1,6 @@
 const playerButton = document.querySelector(".player-button");
 const aiButton = document.querySelector(".ai-button");
-const easyDif = document.querySelector(".easy-dif");
-const mediumDif = document.querySelector(".medium-dif");
-const hardDif = document.querySelector(".hard-dif");
+const easyDif = document.querySelector(".basic-dif");
 const impossibleDif = document.querySelector(".impossible-dif");
 const gridWindow = document.querySelector(".gridWindow");
 const grid = document.querySelectorAll(".grid");
@@ -10,6 +8,16 @@ const winnerText = document.querySelector(".winner-text");
 const winnerTextWindow = document.getElementById("winner-window");
 const winningText = document.querySelector(".winning-text");
 const restartButton = document.querySelector(".restart-button");
+
+/* 
+To do:
+- rewrite game logic:
+  - generate grid with array
+  - when grid is filled, fill corresponding array index
+  - implement basic a.i.
+  - implement minimax a.i.
+  - fin
+*/
 
 
 const player1 = () => {
@@ -90,6 +98,7 @@ const gameFlow = (() => {
             })
         })
     }
+
 
     return { restartGame };
 })();

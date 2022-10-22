@@ -134,9 +134,7 @@ body {
     font-weight: bold;
 }
 
-.easy-dif,
-.medium-dif,
-.hard-dif,
+.basic-dif,
 .impossible-dif {
     display: flex;
     justify-content: center;
