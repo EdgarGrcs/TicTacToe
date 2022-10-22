@@ -4,12 +4,9 @@ const easyDif = document.querySelector(".easy-dif");
 const mediumDif = document.querySelector(".medium-dif");
 const hardDif = document.querySelector(".hard-dif");
 const impossibleDif = document.querySelector(".impossible-dif");
-
-
 const gridWindow = document.querySelector(".gridWindow");
 const grid = document.querySelectorAll(".grid");
 const winnerText = document.querySelector(".winner-text");
-
 const winnerTextWindow = document.getElementById("winner-window");
 const winningText = document.querySelector(".winning-text");
 const restartButton = document.querySelector(".restart-button");
@@ -50,7 +47,7 @@ function restartGame() {
 
 }
 
-restartGame();
+
 
 
 
@@ -64,14 +61,13 @@ function clickHandler(e) {
     if (checkForWin(currentSymbol)) {
         displayMessage(false);
     }
-
     xTurn = !xTurn;
-
-    counter++;
 
     if (counter == 9) {
         displayMessage(true);
     }
+
+    counter++;
 }
 
 function displayMessage(draw) {
@@ -120,3 +116,6 @@ const gameFlow = (() => {
 
     return {};
 })();
+
+
+restartGame();

@@ -71,6 +71,7 @@ body {
     font-family: arial;
     font-size: 30px;
     color: black;
+    cursor: pointer;
 }
 
 .gridWindow {
@@ -96,7 +97,7 @@ body {
 
 .grid:hover {
     background-color: grey;
-    opacity: 20%;
+    opacity: 90%;
 }
 
 .grid:first-child,
@@ -137,13 +138,16 @@ body {
 .medium-dif,
 .hard-dif,
 .impossible-dif {
-    border-radius: 10%;
-    align-content: center;
-    justify-content: center;
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    margin: 10%;
+    height: 100%;
+    font-weight: bold;
+    font-family: arial;
     font-size: 30px;
+    color: black;
+    cursor: pointer;
 }
 
 .winner-text-window {
