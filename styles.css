@@ -119,20 +119,6 @@ body {
     border-bottom: none;
 }
 
-.restart {
-    height: 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    background-color: purple;
-}
-
-.restart-button {
-    height: 100%;
-    width: 100%;
-}
-
 .difficulty {
     height: 100%;
     width: 30%;
@@ -158,4 +144,44 @@ body {
     width: 100%;
     margin: 10%;
     font-size: 30px;
+}
+
+.winner-text-window {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .9);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+}
+
+.winner-text-window.open {
+    display: flex;
+}
+
+.winning-text {
+    font-size: 5rem;
+}
+
+.restart-button {
+    font-size: 3rem;
+    background-color: white;
+    border: 1px solid black;
+    padding: .25em .5em;
+    cursor: pointer;
+}
+
+.restart-button:hover {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+.winner-text-window.open {
+    display: flex;
 }

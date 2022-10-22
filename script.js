@@ -1,6 +1,5 @@
 const playerButton = document.querySelector(".player-button");
 const aiButton = document.querySelector(".ai-button");
-const restartButton = document.querySelector(".restart-button");
 const easyDif = document.querySelector(".easy-dif");
 const mediumDif = document.querySelector(".medium-dif");
 const hardDif = document.querySelector(".hard-dif");
@@ -11,10 +10,13 @@ const gridWindow = document.querySelector(".gridWindow");
 const grid = document.querySelectorAll(".grid");
 const winnerText = document.querySelector(".winner-text");
 
+const winnerTextWindow = document.getElementById("winner-window");
+const winningText = document.querySelector(".winning-text");
+const restartButton = document.querySelector(".restart-button");
 
-grid.forEach(gridDiv => {
-    gridDiv.addEventListener("click", clickHandler, { once: true })
-});
+restartButton.addEventListener("click", restartGame);
+
+
 
 const WINNING_COMBO = [
     [0, 1, 2],
@@ -31,10 +33,24 @@ const WINNING_COMBO = [
 const circleSymbol = "O";
 const xSymbol = "X";
 let xTurn = true;
+let counter = 0;
 
 
-// check for win
-// check for draw
+function restartGame() {
+    xTurn = true;
+    winnerTextWindow.classList.remove("open");
+    grid.forEach(grid => {
+        grid.textContent = "";
+    });
+
+    grid.forEach(gridDiv => {
+        gridDiv.addEventListener("click", clickHandler, { once: true })
+    });
+    counter = 0;
+
+}
+
+restartGame();
 
 
 
@@ -42,16 +58,30 @@ let xTurn = true;
 
 //Understand how this works
 function clickHandler(e) {
-    const winnerText = document.querySelector(".winner-text");
     const grid = e.target;
     const currentSymbol = xTurn ? xSymbol : circleSymbol;
     placeSymbol(grid, currentSymbol);
     if (checkForWin(currentSymbol)) {
-
+        displayMessage(false);
     }
+
     xTurn = !xTurn;
+
+    counter++;
+
+    if (counter == 9) {
+        displayMessage(true);
+    }
 }
 
+function displayMessage(draw) {
+    if (draw) {
+        winningText.innerText = "Draw!";
+    } else {
+        winningText.innerText = `${xTurn ? "X" : "O"} Wins!`;
+    }
+    winnerTextWindow.classList.add("open");
+}
 
 function placeSymbol(grid, currentSymbol) {
     grid.textContent = currentSymbol;
@@ -66,20 +96,15 @@ function checkForWin(currentSymbol) {
             return grid[index].textContent == currentSymbol;
         })
     })
-
-
 }
 
 
 const player1 = () => {
-
     const symbol = "X";
-
     return { symbol };
-
 };
 
-const playerOne = player1();
+
 
 const gameBoard = (() => {
 
