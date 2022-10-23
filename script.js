@@ -72,10 +72,12 @@ const gameFlow = (() => {
         }
         gameBoard.xTurn = !gameBoard.xTurn;
 
+
+        gameBoard.counter++;
+
         if (gameBoard.counter == 9) {
             displayMessage(true);
         }
-        gameBoard.counter++;
     }
 
     function displayMessage(draw) {
